@@ -1,6 +1,9 @@
 // API Service Layer for FastAPI Backend Integration
-const API_BASE_URL = process.env.NEXT_PUBLIC_BACKEND_URL || "http://127.0.0.1:5000"
-const API_TIMEOUT = Number.parseInt(process.env.NEXT_PUBLIC_API_TIMEOUT || "30000")
+export const API_BASE_URL =
+  process.env.NEXT_PUBLIC_BACKEND_URL || "https://3.104.106.34";
+export const API_TIMEOUT = Number.parseInt(
+  process.env.NEXT_PUBLIC_API_TIMEOUT || "30000"
+);
 
 interface ApiResponse<T> {
   success: boolean
