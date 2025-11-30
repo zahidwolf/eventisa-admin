@@ -125,6 +125,8 @@ export default function PendingEvents() {
               className="bg-card border border-border rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
             >
               {/* Banner Image */}
+              {event.event_banner_img ? (
+                <div className="relative h-48 w-full overflow-hidden">
                   <img
                     src={`${API_BASE_URL}${event.event_banner_img}`}
                     alt={event.event_title}
