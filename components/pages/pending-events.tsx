@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react"
 import { Check, X, Calendar, MapPin, Clock, DollarSign, Users, Image as ImageIcon, User, Mail, Phone } from "lucide-react"
 import { format } from "date-fns"
-import { eventsApi } from "@/services/api"
+import { eventsApi, API_BASE_URL } from "@/services/api"
 import { useNotification } from "../notification-context"
 
 interface PendingEvent {
@@ -125,10 +125,8 @@ export default function PendingEvents() {
               className="bg-card border border-border rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
             >
               {/* Banner Image */}
-              {event.event_banner_img ? (
-                <div className="relative h-48 w-full overflow-hidden">
                   <img
-                    src={`http://127.0.0.1:5000${event.event_banner_img}`}
+                    src={`${API_BASE_URL}${event.event_banner_img}`}
                     alt={event.event_title}
                     className="w-full h-full object-cover"
                   />
